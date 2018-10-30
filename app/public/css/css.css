@@ -169,3 +169,10 @@ button{
     width: 75%;
     font-size: 24px;
 }
+#top{
+    position: relative;
+    margin-bottom: 10%;
+}
+#bottom{
+    position: relative;
+}
