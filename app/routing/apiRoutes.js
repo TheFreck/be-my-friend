@@ -8,7 +8,7 @@ module.exports = function(app){
   // API GET Requests
   // ---------------------------------------------------------------------------
   
-  app.get("/api/friends",function(req,res){
+  app.get("/friends",function(req,res){
     res.json(humanData);
   });
 
@@ -22,10 +22,19 @@ module.exports = function(app){
     res.json(true);
   });
 
+  app.post("/api/match",function(req,res){
+    var human = req.body;
+    console.log("human api route: ",human);
+    
+    res.json(humanData.match(human));
+  })
+
   app.get("/api/match/:match",function(req,res){
     var human = req.params.match;
     console.log("human: ",human);
-    humanData.match(human);
+    console.log("human: ",humanData);
+    // console.log("humanData",humanData);
+    // humanData.match(human);
     res.json(humanData.match(human));
   })
 

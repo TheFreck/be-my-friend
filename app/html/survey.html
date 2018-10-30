@@ -5,22 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
     <link rel="stylesheet" href="/css/css.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
     <div>
         <section>
-            <h1>Welcome to the survey</h1>
+            <h3>Welcome to the BeMyFriend<span id="tm">TM</span> survey</h3>
         </section>
         <section>
-            <h1>name:</h1>
-            <input type="text" id="name">
-            <h1>age:</h1>
-            <input type="number" id="age">
-            <h1>I am a doer</h1>
+            <div class="topPart">
+                <section>
+                    <div>
+                        <h1>name:</h1>
+                        <input type="text" id="name">
+                    </div>
+                    <div>
+                        <h1>age:</h1>
+                        <input type="number" id="age">
+                    </div>
+                </section>
+                <section>
+                    <h3>Take your time on this quiz. If you fail you might be alone forever</h3>
+                </section>
+
+            </div>
             <div class="dropdown">
-                <select name="doer" id="one">
+                    <h1>I am a doer</h1>
+                <select name="doer" id="one" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -28,9 +41,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am a thinker</h1>
             <div class="dropdown">
-                <select name="thinker" id="two">
+                    <h1>I am a thinker</h1>
+                <select name="thinker" id="two" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -38,9 +51,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am a feeler</h1>
             <div class="dropdown">
-                <select name="feeler" id="three">
+                    <h1>I am a feeler</h1>
+                <select name="feeler" id="three" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -48,9 +61,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am a maker</h1>
             <div class="dropdown">
-                <select name="maker" id="four">
+                    <h1>I am a maker</h1>
+                <select name="maker" id="four" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -58,9 +71,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am a breaker</h1>
             <div class="dropdown">
-                <select name="breaker" id="five">
+                    <h1>I am a breaker</h1>
+                <select name="breaker" id="five" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -68,9 +81,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am a cookie baker</h1>
             <div class="dropdown">
-                <select name="baker" id="six">
+                    <h1>I am a cookie baker</h1>
+                <select name="baker" id="six" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -78,9 +91,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I am the fire starter, twisted fire starter</h1>
             <div class="dropdown">
-                <select name="fire" id="seven">
+                    <h1>I am the fire starter, twisted fire starter</h1>
+                <select name="fire" id="seven" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -88,9 +101,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I'm too sexy for this shirt</h1>
             <div class="dropdown">
-                <select name="sexy" id="eight">
+                    <h1>I'm too sexy for this shirt</h1>
+                <select name="sexy" id="eight" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -98,9 +111,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I'm good enough, I'm smart enough and doggonit! People like me!!!</h1>
             <div class="dropdown">
-                <select name="good" id="nine">
+                    <h1>I'm good enough, I'm smart enough and doggonit! People like me!!!</h1>
+                <select name="good" id="nine" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -108,9 +121,9 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <h1>I see dead people</h1>
             <div class="dropdown">
-                <select name="dead" id="ten">
+                    <h1>I see dead people</h1>
+                <select name="dead" id="ten" class="list">
                     <option value="5">strongly agree</option>
                     <option value="4">agree</option>
                     <option value="3">neutral</option>
@@ -118,11 +131,49 @@
                     <option value="1">strongly disagree</option>
                 </select>
             </div>
-            <button type="submit" id="submit" class="submitButton">Submit</button>
+            <div id="buttons">
+                <button id="photo">click here to choose a photo</button>
+                <br>
+                <br>
+                <button type="submit" id="submit" class="submitButton">Submit</button>
+            </div>
+            <div id="forFun">
+                <h1>What do you like to do for fun?</h1>
+                <section>
+                    <textarea name="fun" cols="1240" rows="5" id="fun"></textarea>
+                </section>
+            </div>
         </section>
-        <script src="/js/js.js"></script>
     </div>
-
-
+    
+    <div id="youModal" class="modal">
+        <section>
+            <div class="imageHousing">
+                <img id="youPic" class="img" src="" alt="you're lookin' good!">
+            </div>
+            <div class="theRest">
+                <h2>Name: <span class="youName">NAME</span></h2>
+                <h2>Age: <span id="youAge">AGE</span></h2>
+                <p><span class="youName">NAME</span> likes to <span id="youActivity">DO SOMETHING</span></p>
+            </div>
+        </section>
+    </div>
+    
+    <div id="matchModal" class="modal">
+        <section>
+            <div class="imageHousing">
+                <img id="matchPic" class="img" id="goatPic" src="" alt="look at your new friend">
+            </div>
+            <div class="theRest">
+                <h2>Name: <span class="matchName">NAME</span></h2>
+                <p>Hi! My name is <span class="matchName">NAME</span></p>
+                <p>I am <span id="matchAge">AGE</span> and I like <span id="matchActivity">DOING SOMETHING</span></p>
+            </div>
+        </section>
+    </div>
+    
+    <div id="images"></div>
+    
+    <script src="/js/js.js"></script>
 </body>
 </html>

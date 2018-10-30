@@ -1,59 +1,82 @@
+var human = {};
 $("#submit").on("click",function(event){
     event.preventDefault();
 
-    var human = {};
-
     var name = $("#name").val();
-    console.log("name",name);
     human.name = name;
-
     var age = $("#age").val();
-    console.log("age",age);
     human.age = age;
-    
     var one = $("#one").val();
-    console.log("one",one);
     human.one = one;
-    
     var two = $("#two").val();
-    console.log("two",two);
     human.two = two;
-
     var three = $("#three").val();
-    console.log("three",three);
     human.three = three;
-
     var four = $("#four").val();
-    console.log("four",four);
     human.four = four;
-
     var five = $("#five").val();
-    console.log("five",five);
     human.five = five;
-
     var six = $("#six").val();
-    console.log("six",six);
     human.six = six;
-
     var seven = $("#seven").val();
-    console.log("seven",seven);
     human.seven = seven;
-
     var eight = $("#eight").val();
-    console.log("eight",eight);
     human.eight = eight;
-
     var nine = $("#nine").val();
-    console.log("nine",nine);
     human.nine = nine;
-
     var ten = $("#ten").val();
-    console.log("ten",ten);
     human.ten = ten;
+    var fun = $("#fun").val();
+    human.fun = fun;
 
     console.log("human",human);
+
     
     $.post("/api/friends",human,function(data){
-        console.log("data",data);
+        console.log("survey received: ",data);
+        $(".modal").css("display","block");
     })
+    var match = {};
+
+    $.post("/api/match/",human,function(data){
+        console.log("this is it: ",data);
+        console.log("data: ",data);
+        match = data;
+        console.log("match name: ",match.wholeScore.name);
+        console.log("match activity: ",match.wholeScore.fun);
+        $("#matchAge").text(match.wholeScore.age);
+        $(".matchName").text(match.wholeScore.name);
+        $("#matchActivity").text(match.wholeScore.fun);
+        var picIndex = Math.floor(Math.random() * 9);
+        $("#matchPic").attr("src","/images/goats/" + picIndex + ".jpg");
+    })
+    
+    $("#show").attr("id","hide");
+    $(".youName").text(human.name);
+    $("#youPic").attr("src",human.img);
+    $("#youActivity").text(human.fun);
+    $("#youAge").text(human.age);
 })
+
+
+$("#photo").on("click",function(event){
+    event.preventDefault();
+
+    for(var i = 0; i < 8; i++){
+        var image = $('<img>');
+        image.addClass("profilePic");
+        image.attr('src', "/images/nonGoats/" + i + ".jpg");
+        $("#images").append(image);
+    }
+ 
+})
+
+$(document).on("click", '.profilePic', function(event){
+    event.preventDefault();
+    human.img = $(this).attr('src');
+
+    $(".profilePic").addClass("hide");
+    $(this).attr("id","show");
+});
+
+
