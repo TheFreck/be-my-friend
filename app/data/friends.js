@@ -243,7 +243,9 @@ var tableArray = [
 var namesTotals = [];
 
 Array.prototype.match = function(newFriend){
-    console.log("friends newFriend: ",newFriend);
+    // console.log("friends newFriend: ",newFriend);
+    console.log("tableArray.length",tableArray.length);
+    var returnArray = [];
     for(i=0; i<tableArray.length-1; i++){
         var oneDiff = Math.abs(parseInt(newFriend.one) - parseInt(tableArray[i].one));
         var twoDiff = Math.abs(parseInt(newFriend.two) - parseInt(tableArray[i].two));
@@ -256,7 +258,6 @@ Array.prototype.match = function(newFriend){
         var nineDiff = Math.abs(parseInt(newFriend.nine) - parseInt(tableArray[i].nine));
         var tenDiff = Math.abs(parseInt(newFriend.ten) - parseInt(tableArray[i].ten));
         var totalDiff = oneDiff + twoDiff + threeDiff + fourDiff + fiveDiff + sixDiff + sevenDiff + eightDiff + nineDiff + tenDiff;
-        var returnArray = [];
         var returnObject = {};
         returnObject.one = oneDiff;
         returnObject.two = twoDiff;
@@ -281,18 +282,22 @@ Array.prototype.match = function(newFriend){
     var minScore = {};
     minScore.score = 40;
     minScore.thing = "thing";
+    var counter = 0;
+    console.log("returnArray.length",returnArray.length);
     for(let i=0; i<returnArray.length; i++){
-        console.log("returnArray[i].total",returnArray[i].total);
+        console.log("counter: ",counter);
+        counter ++;
+        // console.log("returnArray[i].total",returnArray[i].total);
         if(returnArray[i].total < minScore.score){
             minScore.score = returnArray[i].total;
             minScore.name = returnArray[i].name;
-            console.log("returnArray[i]: ",returnArray[i])
-            console.log("tableArray[i]: ",tableArray[i])
+            // console.log("returnArray[i]: ",returnArray[i])
+            // console.log("tableArray[i]: ",tableArray[i])
             minScore.wholeScore = tableArray[i];
-            console.log("minScore: ",minScore.name);
+            // console.log("minScore: ",minScore.name);
         }
     }
-    console.log("minScore: ",minScore);
+    // console.log("minScore: ",minScore);
     return minScore;
 }
 

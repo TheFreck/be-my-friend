@@ -29,7 +29,7 @@ $("#submit").on("click",function(event){
     var fun = $("#fun").val();
     human.fun = fun;
 
-    console.log("human",human);
+    // console.log("human",human);
 
     
     $.post("/api/friends",human,function(data){
@@ -39,15 +39,16 @@ $("#submit").on("click",function(event){
     var match = {};
 
     $.post("/api/match/",human,function(data){
-        console.log("this is it: ",data);
-        console.log("data: ",data);
+        // console.log("this is it: ",data);
+        // console.log("data: ",data);
         match = data;
-        console.log("match name: ",match.wholeScore.name);
-        console.log("match activity: ",match.wholeScore.fun);
+        // console.log("match name: ",match.wholeScore.name);
+        // console.log("match activity: ",match.wholeScore.fun);
         $("#matchAge").text(match.wholeScore.age);
         $(".matchName").text(match.wholeScore.name);
         $("#matchActivity").text(match.wholeScore.fun);
         var picIndex = Math.floor(Math.random() * 9);
+        // console.log("picIndex: ,",picIndex);
         $("#matchPic").attr("src","/images/goats/" + picIndex + ".jpg");
     })
     
